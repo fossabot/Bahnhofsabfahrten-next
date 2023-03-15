@@ -2,11 +2,7 @@
 
 
 <h1  align="center">Bahnhofsabfahrten</h1>
-  <img  alt="top language"  src="https://img.shields.io/github/languages/top/Phipsiart/bahnhofsabfahrten?color=informational">
- <img  alt="language count"  src="https://img.shields.io/github/languages/count/Phipsiart/bahnhofsabfahrten?color=orange">
-  <img  alt="Repository size"  src="https://img.shields.io/github/repo-size/Phipsiart/bahnhofsabfahrten?color=blueviolet">
-<img src="https://img.shields.io/github/issues-pr/Phipsiart/Bahnhofsabfahrten">
-<img  alt="issues"  src="https://img.shields.io/github/issues/Phipsiart/bahnhofsabfahrten?color=56BEB8"/>
+ <img  alt="top language"  src="https://img.shields.io/github/languages/top/Phipsiart/bahnhofsabfahrten?color=informational"> <img  alt="language count"  src="https://img.shields.io/github/languages/count/Phipsiart/bahnhofsabfahrten?color=orange"> <img  alt="Repository size"  src="https://img.shields.io/github/repo-size/Phipsiart/bahnhofsabfahrten?color=blueviolet"> <img src="https://img.shields.io/github/issues-pr/Phipsiart/Bahnhofsabfahrten"><img  alt="issues"  src="https://img.shields.io/github/issues/Phipsiart/bahnhofsabfahrten?color=56BEB8"/>
 <p>
   <a  href="#dart-about">About</a>  &#xa0; | &#xa0; <a  href="#sparkles-features">Features</a>  &#xa0; | &#xa0; <a  href="#white_check_mark-requirements">Requirements</a>  &#xa0; | &#xa0; <a  href="#checkered_flag-starting">Starting</a>  &#xa0;
 </p
