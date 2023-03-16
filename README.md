@@ -72,11 +72,11 @@ $ yarn  start
 # The server is now available at http://localhost:3000.
 
 ```
+## :heart: Thank you ##
 
-  
-  
-  
-  
+Train icon by [Remix Icon](https://github.com/Remix-Design/RemixIcon)
+
+
 
 Made with :heart: by <a  href="https://github.com/Phipsiart"  target="_blank">Phipsiart </a>  & [Contributors](https://github.com/Phipsiart/Bahnhofsabfahrten/graphs/contributors)
 
