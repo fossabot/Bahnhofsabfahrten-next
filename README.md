@@ -77,7 +77,7 @@ $ yarn  start
 Train icon by [Remix Icon](https://github.com/Remix-Design/RemixIcon)
 
 
-## :📝: Author ##
+## :memo: Author ##
 
 Made with :heart: by <a  href="https://github.com/Phipsiart"  target="_blank">Phipsiart </a>  & [Contributors](https://github.com/Phipsiart/Bahnhofsabfahrten/graphs/contributors)
 
