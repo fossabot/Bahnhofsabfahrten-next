@@ -26,7 +26,7 @@ export default function Home() {
       </Head>
       <Header></Header>
       <main className={inter.className}>
-        <h1 className={styles.headline}>Bahnhofsabfahrten</h1>
+        <h1 className={styles.headline}>Bahnhof ausw&auml;hlen</h1>
         <div className={styles.search} id={styles.searchfield}>
         <input  autoComplete="off" role="presentation" required className={styles.boxanimation} type="text" id="searchvalue" placeholder="nach einem Bahnhof suchen"></input>
         <input  autoComplete="off" role="presentation" required className={styles.boxanimation2} type="number" id="numberofresults" placeholder="Anzahl der Ergebnisse" defaultValue="10"></input>

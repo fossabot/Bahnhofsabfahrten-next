@@ -11,5 +11,5 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 tr, th, td{
-  padding-left: 10px;
+  padding-left: 14px;
 }

@@ -7,7 +7,7 @@ const Header = () =>{
     return(
         <div className={inter.className}>
         <div className={styles.pageheader}>
-        <header className={styles.brandheader}><Link href="/"><Image className={styles.brandimage} src="/logo.png" alt="Phipsiart Logo" width={32} height={32} /></Link></header>
+        <header className={styles.brandheader}><Link href="/"><Image className={styles.brandimage} src="/logo.svg" alt="Phipsiart Logo" width={32} height={32} /></Link></header>
         </div>
         </div>
     )
