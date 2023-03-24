@@ -8,7 +8,12 @@
 }
 #searchfield{
   color: white;
-  margin-top: 2%;
+  display: flex;
+}
+#resultsfield{
+  color: white;
+  margin-top: 1%;
+  margin-right: 0.5%;
   display: flex;
 }
 .Headline{
@@ -57,7 +62,10 @@
   outline-offset: 4px;
   margin-left: 10px;
 }
-
+.search{
+  display: flex;
+  justify-content: center;
+}
 .inputbutton{
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
@@ -70,8 +78,8 @@
   color: rgb(255, 255, 255);
   font-weight: bold;
   min-height: 32px;
-  margin-left: 16px;
   background-color: orange;
+  margin-top: 1%;
 
 }
 .inputbutton:hover{

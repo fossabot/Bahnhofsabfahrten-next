@@ -17,9 +17,14 @@ export default async function getData(req: NextApiRequest, res: NextApiResponse)
   console.log(results)
 const fetchdeparturesurl = "http://127.0.0.1:3000/api/station/" + station + "&" + results
 const fetchdepartures = await (await fetch(fetchdeparturesurl)).json()
+let jetzt = new Date();
+let hours = jetzt.getHours();
+let minutes = jetzt.getMinutes();
+var time = hours + ':' + minutes
   let line = fetchdepartures['departures']['lines']
   let destination = fetchdepartures['departures']['destination']
   let departure = fetchdepartures['departures']['planneddepartures']
+  let actualdeparture = fetchdepartures['departures']['actualdeparture']
   let platform = fetchdepartures['departures']['platform']
   let delays = fetchdepartures['departures']['delays']
   const delaycolorresult = fetchdepartures['departures']['delaycolorresult']
@@ -28,7 +33,7 @@ const fetchdepartures = await (await fetch(fetchdeparturesurl)).json()
   let result: {[key: number]: string[]} = {};
   
   for (let i = 0; i < delays.length; i++) {
-      result[i] = [line[i], destination[i], departure[i], platform[i], delays[i]];
+      result[i] = [line[i], destination[i], departure[i], actualdeparture[i], platform[i], delays[i]];
   }
   console.log(station)
   console.log(results)
@@ -37,6 +42,7 @@ const fetchdepartures = await (await fetch(fetchdeparturesurl)).json()
         result,
         delaycolorresult,
         createdon,
+        time,
         stationname
     })
     )

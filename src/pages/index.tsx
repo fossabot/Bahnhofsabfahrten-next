@@ -29,8 +29,12 @@ export default function Home() {
         <h1 className={styles.headline}>Bahnhof ausw&auml;hlen</h1>
         <div className={styles.search} id={styles.searchfield}>
         <input  autoComplete="off" role="presentation" required className={styles.boxanimation} type="text" id="searchvalue" placeholder="nach einem Bahnhof suchen"></input>
-        <input  autoComplete="off" role="presentation" required className={styles.boxanimation2} type="number" id="numberofresults" placeholder="Anzahl der Ergebnisse" defaultValue="10"></input>
-        <button  onClick={searchstation} className={styles.inputbutton}>Suchen</button>
+       </div>
+       <div className={styles.search} id={styles.resultsfield}>
+       <input  autoComplete="off" role="presentation" required className={styles.boxanimation2} type="number" id="numberofresults" placeholder="Anzahl der Ergebnisse" defaultValue="10"></input>
+       </div>
+       <div className={styles.search}>
+       <button  onClick={searchstation} className={styles.inputbutton}>Suchen</button>
        </div>
       </main>
     </>

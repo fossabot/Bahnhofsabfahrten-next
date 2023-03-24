@@ -72,3 +72,13 @@
 .tableheader{
   text-align: left;
 }
+.animation{
+  border-top: 3px solid green;
+  animation: trainarriving-animation 2s infinite;
+  width: 0px;
+}
+@keyframes trainarriving-animation {
+  to{
+    width: 100%;
+  }
+}

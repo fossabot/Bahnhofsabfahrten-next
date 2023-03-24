@@ -48,6 +48,9 @@ console.log(error)
   const planneddeparturesapiresult = _.map(fetchdeparturesresult, 'plannedWhen')
   const destination = _.map(fetchdeparturesresult, 'direction')
   const platform = _.map(fetchdeparturesresult, 'platform')
+  const departuresdelayedapiresult = _.map(fetchdeparturesresult, 'when')
+  var actualdeparture = departuresdelayedapiresult.map((departuresdelayedapiresult: string) => departuresdelayedapiresult.substring(11).substring(0,5)) 
+
   const delaysconvert = JSON.stringify(delaysapiresult,
     (key, value) => (value === 0) ? 'pünktlich' : value,
   );
@@ -101,9 +104,10 @@ console.log(error)
       destination,
       platform,
        planneddepartures,
+       actualdeparture,
        delays,
-       delaycolorresult,
-    },
+       delaycolorresult
+       },
     info:{
       "created-on": time
     }
