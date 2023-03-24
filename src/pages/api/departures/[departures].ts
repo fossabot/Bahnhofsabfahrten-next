@@ -17,10 +17,10 @@ export default async function getData(req: NextApiRequest, res: NextApiResponse)
   console.log(results)
 const fetchdeparturesurl = "http://127.0.0.1:3000/api/station/" + station + "&" + results
 const fetchdepartures = await (await fetch(fetchdeparturesurl)).json()
-let jetzt = new Date();
-let hours = jetzt.getHours();
-let minutes = jetzt.getMinutes();
-var time = hours + ':' + minutes
+let date = new Date();
+let hours = date.getHours().toString().padStart(2, '0');
+let minutes = date.getMinutes().toString().padStart(2, '0');
+var time = (`${hours}:${minutes}`);
   let line = fetchdepartures['departures']['lines']
   let destination = fetchdepartures['departures']['destination']
   let departure = fetchdepartures['departures']['planneddepartures']
@@ -28,7 +28,6 @@ var time = hours + ':' + minutes
   let platform = fetchdepartures['departures']['platform']
   let delays = fetchdepartures['departures']['delays']
   const delaycolorresult = fetchdepartures['departures']['delaycolorresult']
-  const createdon = fetchdepartures['info']['created-on']
   const stationname = fetchdepartures['station']['name']
   let result: {[key: number]: string[]} = {};
   
@@ -41,7 +40,6 @@ var time = hours + ':' + minutes
     res.status(200).json({
         result,
         delaycolorresult,
-        createdon,
         time,
         stationname
     })

@@ -31,13 +31,6 @@ export default async function getData(req: NextApiRequest, res: NextApiResponse)
 console.log(error)
   });
   const fetchdeparturesapiresult = fetchdepartures['departures']
-  var date = new Date(); 
-  var time = date.getDate() + "."
-   + (date.getMonth()+1)  + "." 
-   + date.getFullYear() + " um "  
-   + date.getHours() + ":"  
-   + date.getMinutes() + ":" 
-   + date.getSeconds();
     const departuresconvert = JSON.stringify(fetchdeparturesapiresult,
     (key, value) => (value === null) ? '\u00A0' : value
   );
@@ -108,9 +101,6 @@ console.log(error)
        delays,
        delaycolorresult
        },
-    info:{
-      "created-on": time
-    }
   })
   )
   }

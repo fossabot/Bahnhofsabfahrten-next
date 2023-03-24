@@ -13,14 +13,12 @@ export const getServerSideProps = async ({params}) => {
   const data = await res.json()
   const departuredata = data['result']
   const delaycolor = data['delaycolorresult']
-  const creationdate = data['createdon']
   const stationname = data['stationname']
   const timecurrent = data['time']
   return{
     props: {
       departuredataresponse : departuredata,
       delayColorResult: delaycolor,
-      createdon: creationdate,
       station: stationname,
       currenttime: timecurrent
     }
@@ -28,7 +26,7 @@ export const getServerSideProps = async ({params}) => {
 }
 
 
-const Page = ({departuredataresponse, delayColorResult, departuresdelayed, station, currenttime}) =>{0
+const Page = ({departuredataresponse, delayColorResult, station, currenttime}) =>{0
   const router = useRouter();
   const refreshData = () => {
     router.replace(router.asPath);
