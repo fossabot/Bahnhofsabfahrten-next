@@ -42,7 +42,7 @@ return(
    <div className={inter.className}>
     <div className={styles.departures}>
     <table>
-    <thead>
+    <thead className={styles.tableheader}>
   <tr>
     <th>Linie</th>
     <th>Ziel</th>
