@@ -55,11 +55,11 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [
 ```bash
 # Clone this project
 
-$ git  clone  https://github.com/Phipsiart/Bahnhofsabfahrten
+$ git clone https://github.com/Phipsiart/Bahnhofsabfahrten
 
 # Access
 
-$ cd  Bahnhofsabfahrten
+$ cd Bahnhofsabfahrten
 
 # Install dependencies
 
@@ -67,7 +67,7 @@ $ yarn install
 
 # Run the project
 
-$ yarn  start
+$ yarn start
 
 # The server is now available at http://localhost:3000.
 
