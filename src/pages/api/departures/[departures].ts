@@ -26,7 +26,9 @@ var time = (`${hours}:${minutes}`);
   let departure = fetchdepartures['departures']['planneddepartures']
   let actualdeparture = fetchdepartures['departures']['actualdeparture']
   let platform = fetchdepartures['departures']['platform']
-  let delays = fetchdepartures['departures']['delays']
+  let delaysapiresult: string[] =  fetchdepartures['departures']['delays'] 
+  let delays: string[] = delaysapiresult.map(item => item === '\xa0' ? 'pünktlich' : item);
+  
   const delaycolorresult = fetchdepartures['departures']['delaycolorresult']
   const stationname = fetchdepartures['station']['name']
   let result: {[key: number]: string[]} = {};

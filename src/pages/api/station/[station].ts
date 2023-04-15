@@ -36,16 +36,31 @@ console.log(error)
   );
   var fetchdeparturesresult = JSON.parse("" + departuresconvert + "");
   const getlines = _.map(fetchdeparturesresult, 'line')
-  const lines = _.map(getlines, 'name')
+  interface LineItem {
+    name: string;
+  }
+  const lines = _.map(getlines, (item: LineItem) => {
+    let itemName = item.name;
+    itemName = itemName.replace("BRB ", "");
+    itemName = itemName.replace(/([a-zA-Z])(\d)/g, "$1 $2");
+    return itemName;
+  });
   const delaysapiresult = _.map(fetchdeparturesresult, 'delay') ;
   const planneddeparturesapiresult = _.map(fetchdeparturesresult, 'plannedWhen')
-  const destination = _.map(fetchdeparturesresult, 'direction')
-  const platform = _.map(fetchdeparturesresult, 'platform')
+  interface DepartureItem{
+    direction: string;
+  }
+  const destination = _.map(fetchdeparturesresult, (item: DepartureItem) => {
+    let destinationName = item.direction;
+    destinationName = destinationName.replace(/Gl\.\d+-\d+$/, "");
+    destinationName = destinationName.trim();
+    return destinationName;
+  });
+    const platform = _.map(fetchdeparturesresult, 'platform')
   const departuresdelayedapiresult = _.map(fetchdeparturesresult, 'when')
   var actualdeparture = departuresdelayedapiresult.map((departuresdelayedapiresult: string) => departuresdelayedapiresult.substring(11).substring(0,5)) 
-
   const delaysconvert = JSON.stringify(delaysapiresult,
-    (key, value) => (value === 0) ? 'pünktlich' : value,
+      (key, value) => (value === 0) ? 'pünktlich' : value,
   );
   var delayswithoutminutes = JSON.parse("" + delaysconvert + "");
   let delays = [];
@@ -64,7 +79,7 @@ console.log(error)
       delays.push(delayswithoutminutes[i]);
   }
   }
-  let converttonumbers = delays.map(function(item) {
+    let converttonumbers = delays.map(function(item) {
     if (item === 'pünktlich') {
         return 0;
     } else if (item.includes('Minute')) {
@@ -78,7 +93,7 @@ console.log(error)
   let delaycolor: (number | string)[] = converttonumbers;
   let delaycolorresult = delaycolor.map(function(item: number | string) {
       if (item === "\u00A0") {
-          return "white";
+          return "green";
       } else if (typeof item === "number" && item > 4) {
           return "red";
       } else {
