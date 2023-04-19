@@ -93,11 +93,15 @@ console.log(error)
   let delaycolor: (number | string)[] = converttonumbers;
   let delaycolorresult = delaycolor.map(function(item: number | string) {
       if (item === "\u00A0") {
-          return "green";
+          return "#00ff15";
       } else if (typeof item === "number" && item > 4) {
           return "red";
-      } else {
-          return "green";
+      }
+      else if (_.inRange(item, 1, 5)){
+        return "orange"
+      }
+      else {
+          return "#00ff15";
       }
   });
   var planneddepartures = planneddeparturesapiresult.map((planneddeparturesapiresult: string) => planneddeparturesapiresult.substring(11).substring(0,5)) 
