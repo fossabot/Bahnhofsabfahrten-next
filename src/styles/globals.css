@@ -50,7 +50,15 @@ tr, th, td{
   color: grey;
 }
 .searchresults{
-  margin-top: 4%;
-  font-size: 1em;
+  border: 2px solid #29d;
+  color: white;
+  font-size: 18px;
+  padding: 5px;
+  margin-top: 7%;
   cursor: pointer;
+  border-radius: 10px;
+}
+.item{
+  color: grey;
+  transition:  all 0.2s;
 }

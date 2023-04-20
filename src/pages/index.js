@@ -21,7 +21,7 @@ export default function Home() {
   const listbox  = {
     displayField: 'name',
     data: (query) =>
-      fetch(`https://transport.phipsiart.de/locations?poi=false&addresses=false&query=${query}&results=5`)
+      fetch(`https://transport.phipsiart.de/locations?poi=false&addresses=false&query=${query}&results=7`)
         .then(response => response.json()),
     searchType: 'startsWith', 
   }
@@ -29,6 +29,7 @@ export default function Home() {
     input:'searchinput',
     typeahead: 'grey',
     listbox:'searchresults',
+    item: 'item'
   }
 
 
@@ -50,7 +51,7 @@ export default function Home() {
       typeahead={true}
       debounceWait={250}
       listboxIsImmutable={true}
-      maxItems={5}
+      maxItems={7}
       listbox={listbox}
       noItemsMessage="Bahnhof nicht gefunden"
       placeholder='Bahnhof suchen'
