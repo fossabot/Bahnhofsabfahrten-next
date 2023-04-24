@@ -21,7 +21,7 @@ export default function Home() {
   const listbox  = {
     displayField: 'name',
     data: (query) =>
-      fetch(`https://transport.phipsiart.de/locations?poi=false&addresses=false&query=${query}&results=7`)
+      fetch(`https://api.phipsiart.at/station/${query}`)
         .then(response => response.json()),
     searchType: 'startsWith', 
   }
