@@ -6,6 +6,23 @@ import Turnstone from 'turnstone'
 import { useRouter } from 'next/router'
 const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
+  const listbox  = {
+    displayField: 'name',
+    data: (query) =>
+      fetch(`https://api.phipsiart.at/station/${query}`)
+        .then(response => response.json()).catch(error=>{
+          console.warn("Connection to the API failed")
+        }),
+    searchType: 'startsWith', 
+  }
+  const searchstyles= {
+    input:'searchinput',
+    typeahead: 'grey',
+    listbox:'searchresults',
+    item: 'item'
+  }
+
+
   const router = useRouter();
   function searchstation(){
     const getsearchvalue = document.getElementById("searchvalue").value
@@ -18,21 +35,6 @@ export default function Home() {
         router.push("/departures")
       }
   }
-  const listbox  = {
-    displayField: 'name',
-    data: (query) =>
-      fetch(`https://api.phipsiart.at/station/${query}`)
-        .then(response => response.json()),
-    searchType: 'startsWith', 
-  }
-  const searchstyles= {
-    input:'searchinput',
-    typeahead: 'grey',
-    listbox:'searchresults',
-    item: 'item'
-  }
-
-
 
   return (
     <>
@@ -56,7 +58,7 @@ export default function Home() {
       noItemsMessage="Bahnhof nicht gefunden"
       placeholder='Bahnhof suchen'
     /> 
-      <input  autoComplete="off" role="presentation" required className={styles.boxanimation2} type="number" id="numberofresults" placeholder="Anzahl der Ergebnisse" defaultValue="10"></input>
+      <input  autoComplete="off" role="presentation" required className={styles.boxanimation} type="number" id="numberofresults" placeholder="Anzahl der Ergebnisse" defaultValue="10"></input>
        <button onClick={searchstation} className={styles.inputbutton}>Suchen</button>
        </div>
        <div id='footer'>
