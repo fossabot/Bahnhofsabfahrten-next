@@ -52,6 +52,9 @@ tr, th, td{
     border-radius: 10px;
     margin-top: 5%;
   }
+  .boxanimation{
+    display: none;
+  }
 }
 #footer {
   position: fixed;
