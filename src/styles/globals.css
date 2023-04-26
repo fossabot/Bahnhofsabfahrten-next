@@ -68,7 +68,7 @@ tr, th, td{
   border-bottom-right-radius: 4px;
   outline: 4px transparent;
   outline-style: groove;
-  transition: outline 300ms;
+  transition: outline 400ms;
   min-height: 32px;
  }
  .searchinput:focus{
@@ -80,18 +80,21 @@ tr, th, td{
   color: gray;
 }
 .searchresults{
-  border: 2px solid #29d;
   color:#fff;
   font-size: 1.2em;
-  padding: 5px;
-  margin-top: 7%;
+  padding: 10px;
   cursor: pointer;
   border-radius: 10px;
   font-weight: bold;
+  margin-top: 15px;
+  border: 2px solid #29d
 }
 .item{
   color: #000;
   font-weight: bold;
   background-color: #fff;
-  
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 4px;
+  transition: all 400ms;
 }

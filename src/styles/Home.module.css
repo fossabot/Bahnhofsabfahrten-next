@@ -34,7 +34,7 @@
   border-bottom-right-radius: 4px;
   outline: 4px transparent;
   outline-style: groove;
-  transition: outline 300ms;
+  transition: outline 400ms;
   min-height: 32px;
 }
 .boxanimation:focus{
@@ -53,7 +53,7 @@
   border-bottom-right-radius: 4px;
   outline: 4px transparent;
   outline-style: groove;
-  transition: outline 300ms;
+  transition: outline 400ms;
   border: none;
   color: rgb(255, 255, 255);
   font-weight: bold;
