@@ -58,7 +58,7 @@ export default function Home() {
       noItemsMessage="Bahnhof nicht gefunden"
       placeholder='Bahnhof suchen'
     /> 
-      <input  autoComplete="off" role="presentation" required className={styles.boxanimation} type="number" id="numberofresults" placeholder="Anzahl der Ergebnisse" defaultValue="10"></input>
+      <input  autoComplete="off" role="presentation" required className='boxanimation' type="number" id="numberofresults" placeholder="Anzahl der Ergebnisse" defaultValue="10"></input>
        <button onClick={searchstation} className={styles.inputbutton}>Suchen</button>
        </div>
        <div id='footer'>
