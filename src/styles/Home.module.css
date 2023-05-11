@@ -2,13 +2,18 @@
   font-weight: bold;
 }
 .headline{
-  color: rgb(255,255, 255);
-  font-size: 2.8em;
+  color: rgb(255, 255, 255);
+  font-size: 2.8em !important;
   text-align: center;
+  font-weight: bold;
+}
+.span{
+ color:  #22e886;
 }
 #searchfield{
-  color: white;
+  color: rgb(0, 0, 0);
   display: flex;
+  margin-top: 3%;
 }
 #resultsfield{
   color: white;
@@ -45,7 +50,7 @@
 }
 .inputbutton:hover{
   outline-style: groove;
-  outline: 2px solid #29d;
+  outline: 2px solid #22e886;
   outline-offset: 4px; 
 }
 .search{

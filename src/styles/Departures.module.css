@@ -5,9 +5,13 @@
 }
 .headline{
     color: rgb(255,255, 255);
-    font-size: 2.8em;
+    font-size: 2.8em !important;
+    font-weight: bold;
     text-align: center;
   }
+  .span{
+    color:  #22e886;
+   }
 .platform{
     color: rgb(255, 255, 255);
     font-size: 1.4em;

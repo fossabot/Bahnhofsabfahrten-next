@@ -4,16 +4,25 @@ import styles from '@/styles/Home.module.css'
 import Header from '../../components/Header/header'
 import Turnstone from 'turnstone'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
+import { useState,useEffect } from 'react'
 const inter = Inter({ subsets: ['latin'] })
+const images = ['/0b0dbab875d92bb4a56422df932719.jpg', '/737df7b99aa929093ec4657c1164de.jpg', '/964f53cbd5c49367528be2d62ba546.jpg', '/bc1f36ec8d45b96301420e7d92e0de.jpg', '/e85b5f8274d725a7bafad5178b9304.jpg', '/f5ef6f5a465be97c48efcbee1eda0b.jpg']
 export default function Home() {
-  const listbox  = {
+  const [selectedImage, setSelectedImage] = useState(images[0]);
+  useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * images.length);
+    setSelectedImage(images[randomIndex]);
+  }, []);
+const listbox  = {
     displayField: 'name',
     data: (query) =>
-      fetch(`https://api.phipsiart.at/station/${query}`)
+      fetch(`https://api.phipsiart.at/api?station=${query}&results=5`)
         .then(response => response.json()).catch(error=>{
           console.warn("Connection to the API failed")
         }),
     searchType: 'startsWith', 
+    
   }
   const searchstyles= {
     input:'searchinput',
@@ -23,19 +32,15 @@ export default function Home() {
   }
 
 
+
   const router = useRouter();
   function searchstation(){
     const getsearchvalue = document.getElementById("searchvalue").value
-    const getnumberofresults = document.getElementById("numberofresults").value
     if (getsearchvalue != ""){
-      const redirecturl = "/departures/" + getsearchvalue + "&results=" + getnumberofresults
+      const redirecturl = "/departures/" + getsearchvalue + "&results=10" 
       router.push(redirecturl)
       }
-      if (getsearchvalue ==""){
-        router.push("/departures")
-      }
-  }
-
+  }  
   return (
     <>
       <Head>
@@ -44,26 +49,26 @@ export default function Home() {
       </Head>
       <Header></Header>
       <main className={inter.className}>
-        <h1 className={styles.headline}>Bahnhof ausw&auml;hlen</h1>
+      <h1 className={styles.headline}>Bahnhofsabfahrten<span className={styles.span}>.</span></h1>
+        <div className='flex justify-center pt-8'>
+        <Image alt='Image of a train' src={selectedImage} className='rounded-2xl image-container' height={333} width={650}></Image>
+       </div>
         <div className={styles.search} id={styles.searchfield}>
         <Turnstone  id='searchvalue'
       name='search'
-      styles={searchstyles}
       autoFocus={true}
       typeahead={true}
-      debounceWait={250}
+      debounceWait={0}
       listboxIsImmutable={true}
-      maxItems={7}
+      maxItems={5}
+      onSelect={searchstation}
+      styles={searchstyles}
       listbox={listbox}
       noItemsMessage="Bahnhof nicht gefunden"
-      placeholder='Bahnhof suchen'
+      placeholder='Nach einem Bahnhof suchen'
     /> 
-      <input  autoComplete="off" role="presentation" required className='boxanimation' type="number" id="numberofresults" placeholder="Anzahl der Ergebnisse" defaultValue="10"></input>
-       <button onClick={searchstation} className={styles.inputbutton}>Suchen</button>
        </div>
-       <div id='footer'>
-        <p className={styles.footertext}>Alle Angaben ohne Gew&auml;hr.</p>
-       </div>
+
       </main>
     </>
   )

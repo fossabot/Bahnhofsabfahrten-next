@@ -46,7 +46,7 @@ return(
 </Head>
 <main className={inter.className}>
   <Header></Header>
-   <h1 className={styles.headline}>aktuelle Abfahrten in {station} </h1>
+   <h1 className={styles.headline}>{station}<span className={styles.span}>.</span></h1>
    </main>
    <div className={inter.className}>
     <div className={styles.departures}>

@@ -1,6 +1,9 @@
 @import '@/styles/normalize.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body{
-  background-color: rgb(28, 38, 85);
+  background-color: rgb(6, 11, 78);
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -13,49 +16,7 @@ input[type=number] {
 tr, th, td{
   padding-left: 14px;
 }
-@media only screen and (max-width: 600px) {
-  body {
-    font-size: 0.8em !important;
-  }
-  .item{
-    color: grey;
-    transition:  all 0.2s;
-    margin-top: 5%;
-  }
-  .searchresults{
-    border: 2px solid #29d;
-    color: white;
-    font-size: 18px;
-    padding: 5px;
-    margin-top: 7%;
-    cursor: pointer;
-    border-radius: 10px;
-    margin-top: 5%;
-  }
-}
-@media only screen and (max-width: 496px) {
-  body {
-    font-size: 0.7em !important;
-  }
-  .item{
-    color: grey;
-    transition:  all 0.2s;
-    margin-top: 5%;
-  }
-  .searchresults{
-    border: 2px solid #29d;
-    color: white;
-    font-size: 18px;
-    padding: 5px;
-    margin-top: 7%;
-    cursor: pointer;
-    border-radius: 10px;
-    margin-top: 5%;
-  }
-  .boxanimation{
-    display: none;
-  }
-}
+
 #footer {
   position: fixed;
   bottom: 0;
@@ -71,53 +32,70 @@ tr, th, td{
   border-bottom-right-radius: 4px;
   outline: 4px transparent;
   outline-style: groove;
-  transition: outline 400ms;
+  transition: all 400ms;
   min-height: 32px;
+  min-width: 350px;
  }
  .searchinput:focus{
   outline-style: groove;
-  outline: 2px solid #29d;
+  outline: 2px solid #22e886;
   outline-offset: 4px;
 }
 .grey{
   color: gray;
 }
 .searchresults{
-  color:#fff;
-  font-size: 1.2em;
-  padding: 10px;
+  color: rgb(6, 11, 78);
   cursor: pointer;
-  border-radius: 10px;
-  font-weight: bold;
-  margin-top: 15px;
-  border: 2px solid #29d;
   white-space: nowrap;
+  margin-top: 6%;
+  background-color: #22e886;
+  min-width: 350px;
+  max-width: 350px;
+  font-size: 1.2em;
+  font-weight: bolder;
 }
 .item{
   color: #000;
-  font-weight: bold;
-  background-color: #fff;
-  border-radius: 4px;
-  padding: 10px;
-  margin-top: 4px;
-  transition: all 400ms;
+  background-color: rgb(255, 255, 255);
+  transition: all 200ms;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px
 }
-.boxanimation{
-  margin-left: 12px;
-  box-sizing: border-box;
+
+#searchvalue-listbox{
+  animation: fade-in 400ms ease-in forwards;
   border: 0px solid transparent;
-  padding-left: 10px;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
   outline: 4px transparent;
   outline-style: groove;
-  transition: outline 400ms;
-  min-height: 32px;
+
 }
-.boxanimation:focus{
-  outline-style: groove;
-  outline: 2px solid #29d;
-  outline-offset: 4px;
+@keyframes fade-in {
+  to{
+    outline: 2px solid #22e866;
+    outline-offset: 4px;
+    outline-style: groove;
+  }
+}
+.image-container{
+  width: auto;
+  height: auto;
+}
+@media only screen and (max-width: 496px) {
+  .image-container{
+    width: 80%;
+    height: 80%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .image-container{
+    width: 25%;
+    height: 25%;
+  }
 }
